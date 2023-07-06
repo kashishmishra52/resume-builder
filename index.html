@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href-="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Resume Builder</h1>
+
+    <form id="resumeForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required>
+
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" required>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" required></textarea>
+
+      <label for="experience">Previous Experiences:</label>
+      <textarea id="experience" name="experience" required></textarea>
+
+      <label for="education">Education:</label>
+      <textarea id="education" name="education" required></textarea>
+
+      <label for="achievements">Achievements:</label>
+      <textarea id="achievements" name="achievements" required></textarea>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("resumeForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+      const experience = document.getElementById('experience').value;
+      const education = document.getElementById('education').value;
+      const achievements = document.getElementById('achievements').value;
+
+      // Pass form data to the review page
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("phone", phone);
+      localStorage.setItem("address", address);
+      localStorage.setItem("experience", experience);
+      localStorage.setItem("education", education);
+      localStorage.setItem("achievements", achievements);
+
+      // Clear the form after submission
+      document.getElementById("resumeForm").reset();
+
+      // Redirect to the review page
+      window.location.href = "review.html";
+    });
+  </script>
+</body>
+</html>

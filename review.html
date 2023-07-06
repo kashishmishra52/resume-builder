@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Review</title>
+  <style>
+    /* CSS styles here */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Resume Review</h1>
+
+    <h2>Submitted Resume:</h2>
+
+    <div id="reviewData">
+      <p><strong>Name:</strong> <span id="name"></span></p>
+      <p><strong>Email:</strong> <span id="email"></span></p>
+      <p><strong>Phone:</strong> <span id="phone"></span></p>
+      <p><strong>Address:</strong> <span id="address"></span></p>
+      <p><strong>Previous Experiences:</strong> <span id="experience"></span></p>
+      <p><strong>Education:</strong> <span id="education"></span></p>
+      <p><strong>Achievements:</strong> <spanid="achievements"></span></p>
+    </div>
+
+    <button onclick="goBack()">Go Back</button>
+  </div>
+
+  <script>
+    // Retrieve form data from localStorage and display it on the review page
+    document.getElementById("name").textContent = localStorage.getItem("name");
+    document.getElementById("email").textContent = localStorage.getItem("email");
+    document.getElementById("phone").textContent = localStorage.getItem("phone");
+    document.getElementById("address").textContent = localStorage.getItem("address");
+    document.getElementById("experience").textContent = localStorage.getItem("experience");
+    document.getElementById("education").textContent = localStorage.getItem("education");
+    document.getElementById("achievements").textContent = localStorage.getItem("achievements");
+
+    // Function to go back to the form page
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+</html>
